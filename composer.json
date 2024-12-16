@@ -1,6 +1,7 @@
 {
     "name": "pauci/datetime",
     "description": "Enhanced DateTime, DateTimeImmutable and DateInterval objects",
+    "version": "0.7.0",
     "type": "library",
     "keywords": [
         "datetime",
