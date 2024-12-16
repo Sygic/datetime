@@ -51,8 +51,7 @@ final class FrozenClockTest extends TestCase
     {
         $clock = new FrozenClock();
 
-        $this->expectError();
-        $this->expectErrorMessage('DateTimeImmutable::modify(): Failed to parse time string (foo) at position 0 (f): The timezone could not be found in the database');
+        self::expectExceptionMessage('DateTimeImmutable::modify(): Failed to parse time string (foo) at position 0 (f): The timezone could not be found in the database');
 
         $clock->modify('foo');
     }
