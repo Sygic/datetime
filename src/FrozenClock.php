@@ -6,11 +6,8 @@ namespace Pauci\DateTime;
 
 class FrozenClock implements ClockInterface
 {
-    private DateTime $now;
-
-    public function __construct(DateTime $now = null)
+    public function __construct(private DateTime $now = new DateTime())
     {
-        $this->now = $now ?? new DateTime();
     }
 
     public function set(DateTime $now): void
@@ -26,6 +23,7 @@ class FrozenClock implements ClockInterface
         $this->now = $now;
     }
 
+    #[\Override]
     public function now(): DateTime
     {
         return $this->now;
