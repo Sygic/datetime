@@ -189,11 +189,11 @@ final class DateTimeTest extends TestCase
 
     public function testModifyFailed(): void
     {
+        self::expectExceptionMessage('Failed to parse time string (foo) at position 0 (f): The timezone could not be found in the database');
+
         $dateTime = DateTime::fromString('2016-05-12 22:37:46+02:00');
 
-        $result = $dateTime->modify('foo');
-
-        self::assertFalse($result);
+        $dateTime->modify('foo');
     }
 
     public function testSetDate(): void
