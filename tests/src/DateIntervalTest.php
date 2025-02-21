@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Pauci\DateTime\Test;
 
 use Pauci\DateTime\DateInterval;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class DateIntervalTest extends TestCase
@@ -28,9 +29,9 @@ final class DateIntervalTest extends TestCase
     }
 
     /**
-     * @dataProvider dateIntervalStrings
      * @param list<int> $parts
      */
+    #[DataProvider('dateIntervalStrings')]
     public function testFromDateInterval(string $intervalSpec, array $parts): void
     {
         $interval = DateInterval::fromDateInterval(new \DateInterval($intervalSpec));
@@ -62,9 +63,9 @@ final class DateIntervalTest extends TestCase
     }
 
     /**
-     * @dataProvider dateIntervalStrings
      * @param list<int> $parts
      */
+    #[DataProvider('dateIntervalStrings')]
     public function testFromString(string $intervalSpec, array $parts): void
     {
         $interval = DateInterval::fromString($intervalSpec);
@@ -78,9 +79,9 @@ final class DateIntervalTest extends TestCase
     }
 
     /**
-     * @dataProvider dateIntervalStrings
      * @param list<int> $parts
      */
+    #[DataProvider('dateIntervalStrings')]
     public function testToString(string $intervalSpec, array $parts): void
     {
         $interval = DateInterval::fromParts($parts[0], $parts[1], $parts[2], $parts[3], $parts[4], $parts[5]);
@@ -89,9 +90,9 @@ final class DateIntervalTest extends TestCase
     }
 
     /**
-     * @dataProvider dateIntervalStrings
      * @param list<int> $parts
      */
+    #[DataProvider('dateIntervalStrings')]
     public function testJsonEncode(string $intervalSpec, array $parts): void
     {
         $interval = DateInterval::fromParts($parts[0], $parts[1], $parts[2], $parts[3], $parts[4], $parts[5]);

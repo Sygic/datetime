@@ -130,7 +130,7 @@ class DateTime extends DateTimeImmutable implements DateTimeInterface
     }
 
     #[\Override]
-    public function modify(string $modifier): static|false
+    public function modify(string $modifier): static
     {
         return parent::modify($modifier);
     }
