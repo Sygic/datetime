@@ -19,7 +19,6 @@ class DateInterval extends \DateInterval implements DateIntervalInterface
         $interval->i = $dateInterval->i;
         $interval->s = $dateInterval->s;
         $interval->invert = $dateInterval->invert;
-        $interval->days = $dateInterval->days;
 
         return $interval;
     }
@@ -59,16 +58,19 @@ class DateInterval extends \DateInterval implements DateIntervalInterface
         return new static($interval);
     }
 
+    #[\Override]
     public function __toString(): string
     {
         return $this->toString();
     }
 
+    #[\Override]
     public function jsonSerialize(): string
     {
         return $this->toString();
     }
 
+    #[\Override]
     public function toString(): string
     {
         $datePart = '';
