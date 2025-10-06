@@ -36,8 +36,6 @@ final class DateIntervalTest extends TestCase
     {
         $interval = DateInterval::fromDateInterval(new \DateInterval($intervalSpec));
 
-        self::assertInstanceOf(DateInterval::class, $interval);
-
         self::assertEquals($parts[0], $interval->y);
         self::assertEquals($parts[1], $interval->m);
         self::assertEquals($parts[2], $interval->d);
@@ -57,9 +55,7 @@ final class DateIntervalTest extends TestCase
 
         $interval = DateInterval::fromDateInterval($phpInterval);
 
-        $expected = PHP_VERSION_ID >= 80100 ? 'P2M30DT23H' : 'P3MT-1H';
-
-        self::assertEquals($expected, (string) $interval);
+        self::assertEquals('P2M30DT23H', (string) $interval);
     }
 
     /**
