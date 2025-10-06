@@ -44,10 +44,7 @@ class DateTime extends DateTimeImmutable implements DateTimeInterface
      */
     public static function fromString(string $time, ?DateTimeZone $timezone = null): static
     {
-        $dateTime = parent::createFromInterface(new \DateTime($time, $timezone));
-        \assert($dateTime instanceof static);
-
-        return $dateTime;
+        return parent::createFromInterface(new \DateTime($time, $timezone));
     }
 
     /**
@@ -100,10 +97,7 @@ class DateTime extends DateTimeImmutable implements DateTimeInterface
     #[\Override]
     public static function createFromInterface(\DateTimeInterface $object): static
     {
-        $dateTime = parent::createFromInterface($object);
-        \assert($dateTime instanceof static);
-
-        return $dateTime;
+        return parent::createFromInterface($object);
     }
 
     /**

@@ -18,7 +18,6 @@ class FrozenClock implements ClockInterface
     public function modify(string $modifier): void
     {
         $now = $this->now->modify($modifier);
-        \assert($now instanceof DateTime);
 
         $this->now = $now;
     }
