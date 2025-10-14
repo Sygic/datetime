@@ -1,7 +1,7 @@
 {
     "name": "sygic/datetime",
     "description": "Enhanced DateTime, DateTimeImmutable and DateInterval objects",
-    "version": "0.8.3",
+    "version": "0.8.4",
     "type": "library",
     "keywords": [
         "datetime",
@@ -23,7 +23,7 @@
         "issues": "https://github.com/pauci/datetime/issues"
     },
     "require": {
-        "php": "^8.3 || ^8.4",
+        "php": "^8.4 || ^8.5",
         "ext-json": "*",
         "psr/clock": "^1.0"
     },
