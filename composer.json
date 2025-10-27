@@ -1,7 +1,7 @@
 {
     "name": "sygic/datetime",
     "description": "Enhanced DateTime, DateTimeImmutable and DateInterval objects",
-    "version": "0.8.4",
+    "version": "0.8.5",
     "type": "library",
     "keywords": [
         "datetime",
